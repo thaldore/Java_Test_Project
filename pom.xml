@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Temel proje bilgileri -->
+    <groupId>com.example</groupId>
+    <artifactId>java-test-project</artifactId>
+    <version>1.0.0</version>
+
+    <!-- Sürüm bilgileri -->
+    <properties>
+        <java.version>21</java.version>                  <!-- Java 21 kullanılacağını belirtir -->
+        <spring-boot.version>3.4.5</spring-boot.version> <!-- Spring Boot sürümü -->
+        <rest-assured.version>5.4.0</rest-assured.version> <!-- Test kütüphanesi sürümü -->
+    </properties>
+
+    <!-- Bağımlılıklar -->
+    <dependencies>
+        <!-- Spring Boot Web MVC için temel bağımlılık -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+            <version>${spring-boot.version}</version>
+        </dependency>
+
+        <!-- Test bağımlılıkları -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <version>${spring-boot.version}</version>
+            <scope>test</scope> <!-- Sadece test aşamasında kullanılacak -->
+        </dependency>
+
+        <!-- API testleri için RestAssured kütüphanesi -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>${rest-assured.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Testlerde matcher kullanımı için -->
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest</artifactId>
+            <version>2.2</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Derleme ayarları -->
+    <build>
+        <plugins>
+            <!-- Java 21 derleyici ayarları -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>${java.version}</release>
+                    <compilerArgs>
+                        <arg>-parameters</arg> <!-- Bu satırı ekleyin -->
+                        <arg>--enable-preview</arg>
+                    </compilerArgs>
+                </configuration>
+            </plugin>
+
+            <!-- Spring Boot uygulamasını paketlemek için -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <version>${spring-boot.version}</version>
+            </plugin>
+        </plugins>
+    </build>
+</project>

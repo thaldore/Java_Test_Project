@@ -1,0 +1,195 @@
+
+============================================================
+TEST TARİHİ: 16.05.2025 15:02
+TEST: TEST 1: Tüm Kullanıcıları Getirme (GET /api/users)
+============================================================
+TEST SONUÇLARI:
+------------------------------------------------------------
+STATUS: Status Code: 200 (OK)
+VALIDATION: Response Body: 20 kullanıcı doğrulandı
+TIME: 
+  - Manuel Ölçüm: 423ms
+  - RestAssured Ölçümü: 33ms
+  - Beklenen: <1000ms
+  - Sonuç: (Başarılı)
+
+RESPONSE BODY:
+[
+    {
+        "id": 1,
+        "name": "Ahmet Yılmaz",
+        "email": "ahmet@example.com"
+    },
+    {
+        "id": 2,
+        "name": "Mehmet Demir",
+        "email": "mehmet@example.com"
+    },
+    {
+        "id": 3,
+        "name": "Ayşe Kaya",
+        "email": "ayse@example.com"
+    },
+    {
+        "id": 4,
+        "name": "Fatma Şahin",
+        "email": "fatma@example.com"
+    },
+    {
+        "id": 5,
+        "name": "Mustafa Öztürk",
+        "email": "mustafa@example.com"
+    },
+    {
+        "id": 6,
+        "name": "Emine Çelik",
+        "email": "emine@example.com"
+    },
+    {
+        "id": 7,
+        "name": "Hüseyin Arslan",
+        "email": "huseyin@example.com"
+    },
+    {
+        "id": 8,
+        "name": "Zeynep Koç",
+        "email": "zeynep@example.com"
+    },
+    {
+        "id": 9,
+        "name": "İbrahim Yıldız",
+        "email": "ibrahim@example.com"
+    },
+    {
+        "id": 10,
+        "name": "Hatice Kaplan",
+        "email": "hatice@example.com"
+    },
+    {
+        "id": 11,
+        "name": "Osman Tekin",
+        "email": "osman@example.com"
+    },
+    {
+        "id": 12,
+        "name": "Seda Erdem",
+        "email": "seda@example.com"
+    },
+    {
+        "id": 13,
+        "name": "Kemal Aydın",
+        "email": "kemal@example.com"
+    },
+    {
+        "id": 14,
+        "name": "Elif Güler",
+        "email": "elif@example.com"
+    },
+    {
+        "id": 15,
+        "name": "Cemal Bulut",
+        "email": "cemal@example.com"
+    },
+    {
+        "id": 16,
+        "name": "Sevim Özdemir",
+        "email": "sevim@example.com"
+    },
+    {
+        "id": 17,
+        "name": "Murat Karaca",
+        "email": "murat@example.com"
+    },
+    {
+        "id": 18,
+        "name": "Gülşah Yılmaz",
+        "email": "gulsah@example.com"
+    },
+    {
+        "id": 19,
+        "name": "Volkan Doğan",
+        "email": "volkan@example.com"
+    },
+    {
+        "id": 20,
+        "name": "Leyla Aktaş",
+        "email": "leyla@example.com"
+    }
+]
+============================================================
+
+============================================================
+TEST TARİHİ: 16.05.2025 15:02
+TEST: TEST 2: Yeni Kullanıcı Ekleme (POST /api/users)
+============================================================
+REQUEST BODY:
+{
+    "name": "Yeni Kullanıcı",
+    "email": "yeni@example.com"
+}
+
+------------------------------------------------------------
+TEST SONUÇLARI:
+------------------------------------------------------------
+STATUS: Status Code: 200 (OK)
+VALIDATION: Response Body: 'name' = Yeni Kullanıcı doğrulandı
+TIME: 
+  - Manuel Ölçüm: 47ms
+  - RestAssured Ölçümü: 33ms
+  - Beklenen: <1000ms
+  - Sonuç: (Başarılı)
+
+RESPONSE BODY:
+{
+    "id": 0,
+    "name": "Yeni Kullanıcı",
+    "email": "yeni@example.com"
+}
+============================================================
+
+============================================================
+TEST TARİHİ: 16.05.2025 15:02
+TEST: TEST 3: Kullanıcı Güncelleme (PUT /api/users/1)
+============================================================
+REQUEST BODY:
+{
+    "name": "Güncel Ad",
+    "email": "guncel@example.com"
+}
+
+------------------------------------------------------------
+TEST SONUÇLARI:
+------------------------------------------------------------
+STATUS: Status Code: 200 (OK)
+VALIDATION: Response Body: 'name' = Güncel Ad doğrulandı
+TIME: 
+  - Manuel Ölçüm: 20ms
+  - RestAssured Ölçümü: 8ms
+  - Beklenen: <1000ms
+  - Sonuç: (Başarılı)
+
+RESPONSE BODY:
+{
+    "id": 1,
+    "name": "Güncel Ad",
+    "email": "guncel@example.com"
+}
+============================================================
+
+============================================================
+TEST TARİHİ: 16.05.2025 15:02
+TEST: TEST 4: Kullanıcı Silme (DELETE /api/users/1)
+============================================================
+TEST SONUÇLARI:
+------------------------------------------------------------
+STATUS: Status Code: 200 (OK)
+VALIDATION: Response Body: Silme mesajı doğrulandı
+TIME: 
+  - Manuel Ölçüm: 13ms
+  - RestAssured Ölçümü: 5ms
+  - Beklenen: <1000ms
+  - Sonuç: (Başarılı)
+
+RESPONSE BODY:
+Kullanıcı silindi: 1
+============================================================
